@@ -1,0 +1,37 @@
+<div id="cart-page">
+    <header>
+        {{#link-to 'fullmenu'}}
+            <div><</div>
+        {{/link-to}}
+        <div>SHOPPING CART</div></header>
+     <div class="amount-summary">
+        <ul>
+            <li>
+                <div class="each-total">
+                    <p><span>QQ Noodle Restaurant</span> | <span>Total Amount: $6.75</span></p>                 </div>
+                <div class="food-detail">
+                    <div>1</div>
+                    <div>
+                    <p class="food-name">Three main course & soup</p>
+                    <p class="food-price">$6.25 /each</p>
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-xs">Edit</button>
+                </div>
+                </div>
+                <div class="delivery-text">
+                    <div>√</div>
+                    <div>
+                    <p>Delivery</p>
+                    <p>Will arrive in 90 minutes</p>
+                </div>
+                </div>
+            </li>
+        </ul>
+     </div>
+    <footer>
+    {{#link-to 'payment'}}
+    <button class="btn btn-primary btn-lg btn-block">Check Out Now | <span>$6.25</span>         </button>
+{{/link-to}}
+        </footer>
+</div>
