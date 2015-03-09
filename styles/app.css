@@ -274,7 +274,7 @@ body {
 }
 #fullmenu-page header {
   width: 100%;
-  height: 50px;
+  height: 35px;
   border-bottom: 1px solid #bdbdbd;
   background: #eeeeee;
 }
@@ -285,6 +285,7 @@ body {
   float: left;
 }
 #fullmenu-page .hide-down {
+  height: 35px;
   padding-left: 10px;
   text-align: left;
   color: #01DFA5;

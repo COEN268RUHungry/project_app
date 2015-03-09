@@ -1,3 +1,4 @@
+{{#if isNotFullmenu}}
 <div id="restaurant-page">
     <header>
         <nav>
@@ -38,7 +39,9 @@
     </section>
     <footer>
         <nav>
-            {{#link-to 'fullmenu'}}FULL MENU{{/link-to}}
+            {{#link-to 'restaurant.fullmenu'}}FULL MENU{{/link-to}}
         </nav>
     </footer>
 </div>
+{{/if}}
+{{outlet}}
