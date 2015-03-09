@@ -8,13 +8,14 @@ var Router = Ember.Router.extend({
 Router.map(function() {
     this.route('search', {path: '/'});
     this.resource('discover');
-    this.resource('restaurant');
+    this.resource('restaurant', { path: '/restaurant/:restaurant_id' });
     this.resource('cart');
     this.resource('fullmenu');
     this.resource('payment');
-    this.resource('sidemenu');
+	this.resource('sidemenu');
     this.resource('account');
     this.resource('orderhistory');
+    
 });
 
 export default Router;

@@ -5,8 +5,8 @@
                 <span class="back"> Back</span>
             {{/link-to}}
             <div class="zipcode">
-                <p>94539 </p>
-                <p>Fremont, CA</p>
+                <p>{{zipCode}}</p>
+                <p>{{city}}</p>
             </div>
             {{#link-to 'cart'}}
                 <span class="cart glyphicon glyphicon-shopping-cart"></span>
@@ -14,19 +14,19 @@
         </nav>
     </header>
     <section class="restaurant-intro">
-        <img src="/images/hotpot.jpg" />  
+        <img {{bind-attr src=foodImage}} />  
         <div>
-            <p class="restaurant-name">Boiling Point</p>
-            <p>Taiwanese, Hotpot, Milktea</p>
-            <p>TODAY: 11:00 AM -- 11:00 PM</p>
+            <p class="restaurant-name">{{name}}</p>
+            <p>{{type}}</p>
+            <p>TODAY: {{openHours}}</p>
         </div>
     </section>
     <section class="information">
         <p>Information</p>
-        <p>Accept Credit Card: Visa/Mastercard/Discover</p>
-        <p>Phone: (510)498-8896</p>
-        <p>Website: http://www.bpgroupusa.com</p>
-        <p class="location">46807 Warm Springs Blvd, Fremont, CA 94539</p>
+        <p>Accept Credit Card: {{acceptCreditCard}}</p>
+        <p>Phone: {{phone}}</p>
+        <p>Website: {{website}}</p>
+        <p class="location">{{address}}</p>
         <img src="/images/map.jpg" />
     </section>
     <section class="comments">
