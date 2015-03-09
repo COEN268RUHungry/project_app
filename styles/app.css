@@ -292,12 +292,15 @@ body {
   font-size: 26px;
 }
 #fullmenu-page .menu-category {
-  width: 100%;
   border-bottom: 1px solid #bdbdbd;
   height: 50px;
 }
-#fullmenu-page .menu-category li {
-  width: 50%;
+#fullmenu-page .menu-category ul {
+  width: 1000px;
+  line-height: 50px;
+}
+#fullmenu-page .menu-category ul li {
+  width: 200px;
   height: 50px;
   display: inline;
   text-align: center;
