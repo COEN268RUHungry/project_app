@@ -14,7 +14,7 @@
         </nav>
     </header>
     <section class="restaurant-intro">
-        <img {{bind-attr src=foodImage}} />  
+        <img {{bind-attr src=foodImage}} {{action 'changeImage'}} />  
         <div>
             <p class="restaurant-name">{{name}}</p>
             <p>{{type}}</p>

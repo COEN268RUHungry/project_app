@@ -4,4 +4,8 @@ var User = DS.Model.extend({
 	
 });
 
+User.reopenClass({
+	
+});
+
 export default User;
