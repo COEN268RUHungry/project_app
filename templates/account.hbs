@@ -9,15 +9,18 @@
 <div class="avatar"><img src="images/avatar_eli.jpg" alt="avatar"></div>
 <div class="info">
 <ul>
-	<li class="name">Elizabeth</li>
-	<li class="email">elizabeth@gmail.com</li>
+	<li class="name">{{name}}</li>
+	<li class="email">{{email}}</li>
 </ul>
 </div>
 </div>
 <ul class="what-to-do">
-	<li>My Address<span class="glyphicon glyphicon-menu-right"></span></li>
-	<li>My Payment Method<span class="glyphicon glyphicon-menu-right"></span></li>
-	<li>Contact Us<span class="glyphicon glyphicon-menu-right"></span></li>
+	<li {{action 'toggleAddressDiv'}}>My Address<span class="glyphicon glyphicon-menu-right"></span></li>
+	<div id="address-div" class="hide">{{address}}</div>
+	<li {{action 'togglePaymentDiv'}}>My Payment Method<span class="glyphicon glyphicon-menu-right"></span></li>
+	<div id="payment-div" class="hide">{{address}}</div>
+	<li {{action 'toggleContactDiv'}}>Contact Us<span class="glyphicon glyphicon-menu-right"></span></li>
+	<div id="contact-div" class="hide">{{address}}</div>
 </ul>
 <div class="logout">Log Out</div>
 </div>
