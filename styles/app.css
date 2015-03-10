@@ -305,6 +305,7 @@ body {
   display: inline;
   text-align: center;
   float: left;
+  border-right: 1px solid #bdbdbd;
 }
 #fullmenu-page .menu-detail .food-lists {
   border-bottom: 1px solid #bdbdbd;
@@ -347,6 +348,11 @@ body {
   text-align: center;
   background-color: #04B486;
   color: white;
+}
+#fullmenu-page footer a {
+  line-height: 30px;
+  color: white;
+  font-weight: normal;
 }
 #payment-page {
   font-family: "HelveticaNeue-Light", Arial;

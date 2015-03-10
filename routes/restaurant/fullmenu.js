@@ -1,15 +1,11 @@
 import Ember from 'ember';
 
 var RestaurantFullmenuRoute = Ember.Route.extend({
-	actions: {
-		back: function() {
-			this.controller.set('isNotFullmenu', true);
-			this.transitionTo('restaurant');
-		}
-	},
 	setupController: function(controller, model) {
+		var property = model.get('foodCategory')[0];
     	controller.set('content', model)
-				  .set('isNotFullmenu', false);        
+				  .set('isNotFullmenu', false)
+				  .set('currentCategory', model.get('formattedFoodMenu')[property]);        
   	}
 });
 
