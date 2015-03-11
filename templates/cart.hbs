@@ -20,7 +20,8 @@
 						<p class="food-price">{{item.price}} /each</p>
 						</div>
 					<div>
-						<button class="btn btn-primary btn-xs">Edit</button>
+						<button class="btn btn-primary btn-xs glyphicon glyphicon-minus" {{action 'decrease' item}}></button>
+						<button class="btn btn-primary btn-xs glyphicon glyphicon-plus" {{action 'increase' item}}></button>
 					</div>
 					</div>
 					{{/each}}
@@ -31,7 +32,7 @@
      </div>
     <footer>
     {{#link-to 'payment'}}
-    <button class="btn btn-primary btn-lg btn-block">Check Out Now | <span>$6.25</span>         </button>
+    <button class="btn btn-primary btn-lg btn-block">Check Out Now | <span>{{totalAmount}}</span>         </button>
 {{/link-to}}
         </footer>
 </div>

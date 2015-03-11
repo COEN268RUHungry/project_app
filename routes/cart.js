@@ -5,7 +5,8 @@ var CartRoute = Ember.Route.extend({
 		return this.store.find('cart', 0);
 	},
 	setupController: function(controller, model) {
-    	controller.set('content', model);        
+    	controller.set('content', model);
+//					.set('foodQuantity', 0);        
   	}
 });
 

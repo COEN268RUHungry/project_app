@@ -24,7 +24,16 @@ var Cart = DS.Model.extend({
 		}
 		return res;
 		
-	}.property('foods')
+	}.property('foods', 'foods.@each.quantity'),
+	
+	totalAmount: function() {
+		var total = 0;
+		var foods = this.get('foods').currentState;
+		for (var i=0; i<foods.length; i++) {
+			total += parseFloat((foods[i].get('price')).substring(1)) * parseInt(foods[i].get('quantity'));
+		}
+		return '$' + total.toFixed(2);
+	}.property('foods', 'foods.@each.quantity')
 });
 
 Cart.reopenClass({

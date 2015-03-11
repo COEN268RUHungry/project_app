@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 var RestaurantFullmenuController = Ember.ObjectController.extend({
+		needs: "cart",	
+		foodQuantity: Ember.computed.alias("controllers.cart.foodQuantity"),
 	actions: {
 		back: function() {
 			this.set('isNotFullmenu', true);
@@ -10,17 +12,19 @@ var RestaurantFullmenuController = Ember.ObjectController.extend({
 			this.set('currentCategory', this.get('content').get('formattedFoodMenu')[property]);
 		},
 		add: function(item) {	
-			var food = this.store.push('food', {
+			var number = this.get('foodQuantity') + 1;
+			this.set('foodQuantity', number);
+			var self = this;
+			this.store.push('food', {
 				id: item.foodID,
 				name: item.foodName,
 				price: item.foodPrice,
-				quantity: 1,
 				restaurant: this.get('content')
-			});
-			food.save();
-
-			this.store.find('cart', 0).then(function(result){
-				result.get('foods').pushObject(food);
+			}).save().then(function(result){
+				result.set('quantity', result.get('quantity') + 1);
+				self.store.find('cart', 0).then(function(res){
+					res.get('foods').pushObject(result);
+				});
 			});
 		}
 	},

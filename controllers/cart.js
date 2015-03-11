@@ -1,20 +1,21 @@
 import Ember from 'ember';
 
 var CartController = Ember.ObjectController.extend({
-//	hasRestaurants: function(){
-//		var foods = this.get('content').get('foods').currentState;
-//		var restaurants = [];
-//		for (var i=0; i<foods.length; i++) {
-//			var res = foods[i].get('restaurant');
-//			restaurants.push(res);
-//		}
-////		for (i=0; i<foods.length; i++) {
-////			res = foods[i].get('restaurant');
-////			restaurants.res.push(foods[i]);
-////		}
-//		return restaurants;
-//		
-//	}.property('content.foods')
+	foodQuantity: 0,
+	actions: {
+		decrease: function(item) {
+			item.set('quantity', item.get('quantity') - 1);
+			this.set('foodQuantity', this.get('foodQuantity') - 1);
+			if (item.get('quantity') === 0) {
+				item.deleteRecord();
+				item.save();
+			}
+		},
+		increase: function(item) {
+			item.set('quantity', item.get('quantity') + 1);
+			this.set('foodQuantity', this.get('foodQuantity') + 1);
+		}
+	}
 });
 
 export default CartController;

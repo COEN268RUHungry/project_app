@@ -9,4 +9,12 @@ var Food = DS.Model.extend({
 	restaurant: DS.belongsTo('restaurant')
 });
 
+Food.reopenClass({
+	FIXTURES: [
+		{
+			id: 0
+		}
+	]
+});
+
 export default Food;
