@@ -1,31 +1,31 @@
 <div id="cart-page">
     <header>
-        {{#link-to 'restaurant.fullmenu'}}
-            <div><</div>
+        {{#link-to 'discover'}}
+            <div>&lt;</div>
         {{/link-to}}
-        <div>SHOPPING CART</div></header>
+        <div>SHOPPING CART</div>
+	</header>
      <div class="amount-summary">
         <ul>
             <li>
+				{{#each restaurant in restaurantsList}}
                 <div class="each-total">
-                    <p><span>QQ Noodle Restaurant</span> | <span>Total Amount: $6.75</span></p>                 </div>
-                <div class="food-detail">
-                    <div>1</div>
-                    <div>
-                    <p class="food-name">Three main course & soup</p>
-                    <p class="food-price">$6.25 /each</p>
-                </div>
-                <div>
-                    <button class="btn btn-primary btn-xs">Edit</button>
-                </div>
-                </div>
-                <div class="delivery-text">
-                    <div>√</div>
-                    <div>
-                    <p>Delivery</p>
-                    <p>Will arrive in 90 minutes</p>
-                </div>
-                </div>
+                    <p><span>{{restaurant.restaurantName}}</span> | <span>Total Amount: {{restaurant.amount}}</span></p>                 
+				</div>
+					{{#each item in restaurant.food}}
+					<div class="food-detail">
+						<div>{{item.quantity}}</div>
+						<div>
+						<p class="food-name">{{item.name}}</p>
+						<p class="food-price">{{item.price}} /each</p>
+						</div>
+					<div>
+						<button class="btn btn-primary btn-xs">Edit</button>
+					</div>
+					</div>
+					{{/each}}
+				{{/each}}
+
             </li>
         </ul>
      </div>

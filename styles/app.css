@@ -482,7 +482,14 @@ body {
 }
 #cart-page header div {
   display: inline-block;
-  width: 33%;
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
+  line-height: 50px;
+}
+#cart-page header a div {
+  position: fixed;
+  left: 0;
 }
 #cart-page header div:nth-child(2) {
   text-align: center;
@@ -491,6 +498,8 @@ body {
   padding-left: 10px;
   font-size: 26px;
   color: #04B486;
+  margin-left: 0;
+  left: 0;
 }
 #cart-page .amount-summary {
   background-color: #e6e6e6;

@@ -16,6 +16,7 @@ var Restaurant = DS.Model.extend({
 	currentImageIndex: DS.attr('number', {
 		defaultValue: 0
 	}),
+//	foods: DS.hasMany('food'),
 	
 	restaurantImage: function() {
 		return '/images/%@.jpg'.fmt(this.get('id'));
@@ -38,6 +39,7 @@ var Restaurant = DS.Model.extend({
 			for (var j=0; j < this.get('foodMenu')[category].length; j++) {
 				var temp = this.get('foodMenu')[category][j];
 				var item = {};
+				item.foodID = temp.foodID;
 				item.foodName = temp.foodName;
 				item.foodPrice = '$' + temp.price.toFixed(2);
 				item.icon = '/images/%@/menu/%@.jpg'.fmt(this.get('id'), temp.foodID);
