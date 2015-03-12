@@ -26,16 +26,23 @@
         <p>Information</p>
         <p>Accept Credit Card: {{acceptCreditCard}}</p>
         <p>Phone: {{phone}}</p>
-        <p>Website: {{website}}</p>
-        <p class="location">{{address}}</p>
+		<p>Website: <a {{bind-attr href=website}}>{{website}}</a></p>
+        <p class="location">Location: {{address}}</p>
         <img src="/images/map.jpg" />
     </section>
     <section class="comments">
-        <a href="#"><span class="glyphicon glyphicon-plus"></span></a>
+        <span class="glyphicon glyphicon-plus" {{action 'showAddComment'}}></span>
         <p>Comments</p>
-        <p>Tim: Awesome hotpot and milktea!</p>
-        <p>Nick: Best little hotpot in Bayarea!</p>
-        <a href="comments.html">All Reviews</a>
+		{{#each comment in comments}}
+			<p>{{comment.user.name}}: {{comment.content}}</p>
+		{{/each}}
+<!--        <a href="comments.html">All Reviews</a>-->
+		{{#if isAddingComment}}
+		<div class='comment-adding'>
+			{{textarea class="form-control" value=inputComment}}
+			<button class="btn btn-primary btn-xs" {{action 'addComment' this}}>Submit</button>
+		</div>
+		{{/if}}
     </section>
     <footer>
         <nav>

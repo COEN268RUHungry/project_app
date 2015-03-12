@@ -4,9 +4,8 @@ var User = DS.Model.extend({
 	name: DS.attr('string'),
 	email: DS.attr('string'),
 	address: DS.attr('string'),
-	zipCode: DS.attr('string'),
-
-	
+	zipCode: DS.attr('string')
+//	comments: DS.hasMany('comment', {async: true})
 });
 
 User.reopenClass({

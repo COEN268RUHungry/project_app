@@ -54,6 +54,7 @@ body {
   width: 100%;
   left: 0;
   top: 0;
+  z-index: 1;
 }
 #discover-page header nav {
   border-bottom: 1px solid #f7f7f7;
@@ -233,14 +234,20 @@ body {
   font-family: 'HelveticaNeue', Helvetica, Arial, Sans-Serif;
   font-size: 20px;
 }
-#restaurant-page .comments a {
+#restaurant-page .comments span {
   color: #1abc9c;
 }
-#restaurant-page .comments a:last-child {
-  border: 1px solid #c8c8c8;
-  border-radius: 4px;
-  position: absolute;
-  right: 2%;
+#restaurant-page .comments .comment-adding {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#restaurant-page .comments .comment-adding textarea {
+  display: inline-block;
+  width: 75%;
+}
+#restaurant-page .comments .comment-adding button {
+  display: inline-block;
+  margin-bottom: 5%;
 }
 #restaurant-page footer {
   position: fixed;
@@ -488,6 +495,7 @@ body {
 #cart-page header {
   position: fixed;
   background-color: white;
+  z-index: 1;
   width: 100%;
   height: 50px;
   border-bottom: 1px solid #bdbdbd;

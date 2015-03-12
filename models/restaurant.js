@@ -16,7 +16,7 @@ var Restaurant = DS.Model.extend({
 	currentImageIndex: DS.attr('number', {
 		defaultValue: 0
 	}),
-//	foods: DS.hasMany('food'),
+	comments: DS.hasMany('comment'),
 	
 	restaurantImage: function() {
 		return '/images/%@.jpg'.fmt(this.get('id'));
