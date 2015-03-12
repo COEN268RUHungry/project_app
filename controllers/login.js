@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 var LoginController = Ember.ObjectController.extend({
 	
-	
 	actions:{
 
         save: function (){

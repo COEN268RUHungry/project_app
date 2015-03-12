@@ -612,6 +612,15 @@ body {
 #side-menu .title {
   text-align: center;
 }
+#side-menu .img-center {
+  margin: 0 auto;
+}
+#side-menu p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 35px;
+  font-family: 'HelveticaNeue-Light', Helvetica, Arial, Sans-Serif;
+}
 #account-page {
   height: 100%;
   font-family: "HelveticaNeue-Light", Arial;

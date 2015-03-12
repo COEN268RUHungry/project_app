@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
 var RestaurantFullmenuController = Ember.ObjectController.extend({
-		needs: "cart",	
+		needs: ["cart"],
 		foodQuantity: Ember.computed.alias("controllers.cart.foodQuantity"),
+  		
+
 	actions: {
 		back: function() {
 			this.set('isNotFullmenu', true);
