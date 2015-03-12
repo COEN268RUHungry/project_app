@@ -7,10 +7,10 @@
         <p>Dilicious Food Delivered Quickly</p>
         <div id="find-restaurant">
             <p>Your Zipcode</p>
-            <input type="text" value="" placeholder="94085" class="form-control input-sm" />
+            {{input type="text" value=zipcode placeholder="95014" class="form-control input-sm" }}
             <p>What Restaurant Would You Like?</p>
-            <input type="text" value="" placeholder="QQ Noodle" class="form-control input-sm" />
-            {{#link-to 'discover'}}<button class="btn btn-primary">Find</button>{{/link-to}}
+            {{input type="text" value=restaurantName placeholder="Tpumps" class="form-control input-sm"}}
+            <button class="btn btn-primary" {{action 'find' this}}>Find</button>
         </div>
     </div>
 </div>

@@ -36,7 +36,6 @@
 		{{#each comment in comments}}
 			<p>{{comment.user.name}}: {{comment.content}}</p>
 		{{/each}}
-<!--        <a href="comments.html">All Reviews</a>-->
 		{{#if isAddingComment}}
 		<div class='comment-adding'>
 			{{textarea class="form-control" value=inputComment}}

@@ -55,13 +55,13 @@ Restaurant.reopenClass({
 		{
 			id: 'boilingpoint',
 			name: 'Boiling Point',
-			zipCode: '94539',
+			zipCode: '94538',
 			city: 'Fremont, CA',
 			openHours: '11:00 PM -- 11:00 PM',
 			acceptCreditCard: 'Visa/Mastercard/Discover',
 			phone: '(510)498-8896',
 			website: 'http://www.bpgroupusa.com',
-			address: '46807 Warm Springs Blvd, Fremont, CA 94539',
+			address: '46807 Warm Springs Blvd, Fremont, CA 94538',
 			type: 'Taiwanese, Hotpot, Milktea',
 			foodGallery: ['milktea', 'macaron', 'hotpot', 'snowcube'],
 			foodMenu: {

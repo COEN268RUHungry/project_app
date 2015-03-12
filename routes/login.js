@@ -7,7 +7,8 @@ var LoginRoute = Ember.Route.extend({
 	},
 	setupController: function(controller, model) {
     	controller.set('content', model)
-              	  .set('isLogged', false);        
+              	  .set('isLogged', false)
+				  .set('userID', '0');        
   	},
   	
     

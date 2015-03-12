@@ -48,6 +48,10 @@ body {
 #search-page > div #find-restaurant {
   margin-top: 20%;
 }
+#search-page > div #find-restaurant a {
+  display: block;
+  margin-bottom: 10%;
+}
 #discover-page header {
   position: fixed;
   width: 100%;
@@ -102,6 +106,12 @@ body {
 }
 #discover-page div {
   margin-top: 40px;
+}
+#discover-page div .not-found {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -120px;
 }
 #discover-page div section {
   border-top: 1px solid black;

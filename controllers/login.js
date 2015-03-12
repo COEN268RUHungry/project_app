@@ -19,6 +19,7 @@ var LoginController = Ember.ObjectController.extend({
                 if (password === validPassword) {
                     alert('Welcome Back!');
                     this.set('isLogged', true);
+					this.set('userID', users[i].id);
                     var loggedUserStatus = 'type.FIXTURES.'+i+'.status';
                     this.set(loggedUserStatus, true);
                     this.transitionToRoute('sidemenu');

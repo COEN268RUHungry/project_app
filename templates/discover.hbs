@@ -5,9 +5,7 @@
             <span class="menu glyphicon glyphicon-menu-hamburger"></span>
             {{/link-to}}
             <p>Discover</p>
-            {{#link-to 'search'}}
-                <span class="search glyphicon glyphicon-search"></span>
-            {{/link-to}}
+            <span class="search glyphicon glyphicon-search" {{action 'search'}}></span>
             {{#link-to 'cart'}}
                 <span class="cart glyphicon glyphicon-shopping-cart"></span>
             {{/link-to}}
@@ -15,7 +13,10 @@
         </nav>
     </header>
     <div>
-		{{#each restaurant in controller}}
+		{{#unless filterSearch}}
+			<p class="not-found">Sorry, No Restaurants Found!</p>
+		{{else}}
+		{{#each restaurant in filterSearch}}
         <section>
             {{#link-to 'restaurant' restaurant}}
                 <img {{bind-attr src=restaurant.restaurantImage}} />
@@ -27,5 +28,6 @@
             </div>
         </section>
 		{{/each}}
+		{{/unless}}
     </div>
 </div>
