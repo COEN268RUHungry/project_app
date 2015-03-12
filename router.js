@@ -17,6 +17,7 @@ Router.map(function() {
 	this.resource('sidemenu');
     this.resource('account');
     this.resource('orderhistory');
+    this.resource('login');
     
 });
 
