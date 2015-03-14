@@ -1,38 +1,95 @@
 <div id="payment-page">
     <header>
         {{#link-to 'cart'}}
-            <div><</div>
+            <div>&lt;</div>
         {{/link-to}}
-            <div>Confirm Purchase</div></header>
-    <div class="choose-payment">
-        <p>Payment</p>
-        <p>CHOOSE&nbsp;&nbsp;&nbsp;&nbsp;<span>></span></p>
+            <div>Confirm Purchase</div>
+    </header>
+
+    <div class="enter-info">
+        <div class = "enter-label" {{action 'showPayment'}}>
+            <p>Payment</p>
+                {{#if isShowingPayment}}
+                    <p>HIDE&nbsp;&nbsp;&nbsp;&nbsp;<span>&lt;</span></p>
+                {{else}}
+                    <p>SHOW&nbsp;&nbsp;&nbsp;&nbsp;<span>&gt;</span></p>
+                {{/if}}
+        </div>
+        {{#if isShowingPayment}}
+        <div class="enter-area">
+            <div class="form-group">
+                <label class="control-label">Name On Card</label>
+                <input type="text" class="form-control input-sm">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Card Number</label>
+                <input type="text" class="form-control input-sm">
+            </div>
+        </div>
+        {{/if}}
     </div>
-    <div class="payment-info">
+
+    <div class="enter-info">
+        <div class = "enter-label" {{action 'showAddress'}}>
+            <p>Address</p>
+            
+                {{#if isShowingAddress}}
+                    <p>HIDE&nbsp;&nbsp;&nbsp;&nbsp;<span>&lt;</span></p>
+                {{else}}
+                    <p>SHOW&nbsp;&nbsp;&nbsp;&nbsp;<span>&gt;</span></p>
+                {{/if}}
+        </div>
+        {{#if isShowingAddress}}
+        <div class="enter-area">
+            <div class="form-group">
+                <label class="control-label">Street</label>
+                <input type="text" class="form-control input-sm">
+            </div>
+            <div class="form-group">
+                <label class="control-label">City</label>
+                <input type="text" class="form-control input-sm">
+            </div>
+            <div class="form-group">
+                <label class="control-label">ZipCode</label>
+                <input type="text" class="form-control input-sm">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Phone Number</label>
+                <input type="text" class="form-control input-sm">
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="delivery-info">
+        <div class="delivery-time">
+            <p>CHOOSE DELIVERY TIME</p>
+            <select class="form-control">
+                <option>11:30 AM -- 12:00 PM</option>
+                <option>12:00 PM -- 12:30 PM</option>
+                <option>12:30 PM -- 1:00 PM</option>
+                <option>1:00 PM -- 1:30 PM</option>
+                <option>1:30 PM -- 2:00 PM</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="amount-info">
         <ul>
             <li>
-
-                <p>Phone Number&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <input type="text" value="" placeholder="123-444-5555">
-            </li>
-            <li>
-                <p>CHOOSE PICK-UP TIME</p>
-                <p class="restaurant-name inline-style">QQ Noodle</p>
-                <p class="inline-style">SELECT&nbsp;&nbsp;&nbsp;&nbsp;<span>></span></p>
-            </li>
-            <li>
                 <p class="item">Subtotal:</p>
-                <p class="amount">$3.95</p>
+                <p class="amount">{{totalAmount}}</p>
             </li>
             <li>
                 <p class="item">State&Local Tax:</p>
-                <p class="amount">$0.29</p>
+                <p class="amount">{{tax}}</p>
             </li>
             <li>
                 <p><strong>Total:</strong></p>
-                <p class="amount border"><strong>$4.24</strong></p>
+                <p class="amount border"><strong>{{total}}</strong></p>
             </li>
         </ul>
     </div>
+
     <footer><button class="btn btn-primary btn-lg btn-block">PLACE ORDER</button></footer>
 </div>

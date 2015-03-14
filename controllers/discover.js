@@ -18,7 +18,7 @@ var DiscoverController = Ember.ArrayController.extend({
 		var restaurantName = this.get('restaurantName');
 		var zipcode = this.get('zipcode');
 		var restaurants = this.get('model');
-		if (restaurantName || zipcode) {
+		if (restaurantName || (zipcode && zipcode !== 'undefined')) {
 			if (restaurantName) {
 				return restaurants.filterBy('name', restaurantName);
 			}

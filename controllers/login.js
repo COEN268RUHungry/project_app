@@ -35,17 +35,6 @@ var LoginController = Ember.ObjectController.extend({
             
             alert('No such user!');
         }
-    	// if(email === this.get('email')){
-    	// 	this.set('isLogged', true);
-            
-     //        alert(this.get('name'));
-
-    	// }
-    	// else{
-    	// 	alert("Invalid!");
-     //        console.log(users);
-
-    	// }
     }
     },
 	
