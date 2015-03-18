@@ -4,6 +4,7 @@ var PaymentController = Ember.ObjectController.extend({
 	needs: ['login', 'cart'],
 	isLogged: Ember.computed.alias('controllers.login.isLogged'),
 	userID: Ember.computed.alias('controllers.login.userID'),
+	foodQuantity: Ember.computed.alias('controllers.cart.foodQuantity'),
 	isShowingPayment: false,
 	isShowingAddress: false,
 	isShowingError: false,
@@ -94,6 +95,7 @@ var PaymentController = Ember.ObjectController.extend({
 				item.save();
 			});
 		});
+		this.set('foodQuantity', 0);
 	}
 });
 
