@@ -6,36 +6,35 @@ var LoginController = Ember.ObjectController.extend({
 
         save: function (){
         
-        var password=this.get('inputpassword');
-    	var email=this.get('inputemail');
-        
-        var users = this.get('type.FIXTURES');
-        var validPassword = null;
-         console.log(users);
-        for (var i = users.length - 1; i >= 0; i--) {
-            // users[i]
-            if (email === users[i].email) {
-                validPassword = users[i].password;
-                if (password === validPassword) {
-                    alert('Welcome Back!');
-                    this.set('isLogged', true);
-					this.set('userID', users[i].id);
-                    var loggedUserStatus = 'type.FIXTURES.'+i+'.status';
-                    this.set(loggedUserStatus, true);
-                    this.transitionToRoute('sidemenu');
-                    
-            }
-                else{
-                    alert('Wrong password!');
+            var password=this.get('inputpassword');
+        	var email=this.get('inputemail');
+            var validPassword = null;
+            var self = this;
+
+            this.store.find('user').then(function(users){
+                users.forEach(function(user){
+                    console.log(user);
+                    if (email === user.get('email')) {
+                        validPassword = user.get('password');
+                        if (password === validPassword) {
+                            alert('Welcome Back!');           
+                            self.set('isLogged', true);
+                            self.set('userID', user.get('id'));
+                            self.transitionToRoute('sidemenu');
+                        }else{
+                            alert('Wrong password!');
+                        }
+                    }
+                });
+                if (!validPassword) {
+                    alert('No such user!');
                 }
-                break;
-            }
+            });
+        },
+
+        newUser:function(){
+            this.transitionToRoute('createuser');
         }
-        if (!validPassword) {
-            
-            alert('No such user!');
-        }
-    }
     },
 	
 });

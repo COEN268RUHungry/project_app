@@ -2,13 +2,10 @@
     <header>
         {{#link-to 'cart'}}
             <div>&lt;</div>
+            <span class="glyphicon glyphicon-menu-left"></span>
         {{/link-to}}
             <div>Confirm Purchase</div>
     </header>
-
-    {{#if isShowingError}}
-        <p class="error">Please Enter All of the Information</p>
-    {{/if}}
 
     <div class="enter-info">
         <div class = "enter-label" {{action 'showPayment'}}>
@@ -23,11 +20,11 @@
         <div class="enter-area">
             <div class="form-group">
                 <label class="control-label">Name On Card</label>
-                {{input type="text" value=cardName class="form-control input-sm" placeholder="RUOFEI XIE"}}
+                <input type="text" class="form-control input-sm">
             </div>
             <div class="form-group">
                 <label class="control-label">Card Number</label>
-                {{input type="text" value=cardNumber class="form-control input-sm"}}
+                <input type="text" class="form-control input-sm">
             </div>
         </div>
         {{/if}}
@@ -47,19 +44,19 @@
         <div class="enter-area">
             <div class="form-group">
                 <label class="control-label">Street</label>
-                {{input type="text" value=street class="form-control input-sm" placeholder="500 El Camino Real"}}
+                <input type="text" class="form-control input-sm">
             </div>
             <div class="form-group">
                 <label class="control-label">City</label>
-                {{input type="text" value=city class="form-control input-sm" placeholder="Santa Clara, CA"}}
+                <input type="text" class="form-control input-sm">
             </div>
             <div class="form-group">
                 <label class="control-label">ZipCode</label>
-                {{input type="text" value=zipcode class="form-control input-sm" placeholder="94085"}}
+                <input type="text" class="form-control input-sm">
             </div>
             <div class="form-group">
                 <label class="control-label">Phone Number</label>
-                {{input type="tel" value=phone class="form-control input-sm" placeholder="(408)111-111"}}
+                <input type="text" class="form-control input-sm">
             </div>
         </div>
         {{/if}}
@@ -68,10 +65,13 @@
     <div class="delivery-info">
         <div class="delivery-time">
             <p>CHOOSE DELIVERY TIME</p>
-            {{view "select"
-                    class="form-control"
-                    content=availableDeliveryTime
-                    value=selectedTime}}
+            <select class="form-control">
+                <option>11:30 AM -- 12:00 PM</option>
+                <option>12:00 PM -- 12:30 PM</option>
+                <option>12:30 PM -- 1:00 PM</option>
+                <option>1:00 PM -- 1:30 PM</option>
+                <option>1:30 PM -- 2:00 PM</option>
+            </select>
         </div>
     </div>
 
@@ -92,7 +92,5 @@
         </ul>
     </div>
 
-    <footer>
-        <button class="btn btn-primary btn-lg btn-block" {{action 'placeOrder'}}>PLACE ORDER</button>
-    </footer>
+    <footer><button class="btn btn-primary btn-lg btn-block">PLACE ORDER</button></footer>
 </div>

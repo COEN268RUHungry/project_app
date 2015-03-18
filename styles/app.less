@@ -429,6 +429,9 @@ html, body{
         div{
         display:inline-block;
         width:33%;
+        text-align:center;
+        width:100%;
+        margin-top:0px;
         }
         div:nth-child(2){
             text-align:center;
@@ -443,11 +446,7 @@ html, body{
         }
     }
 
-    .error {
-        color: red;
-        text-align: center;
-        margin-top: 10px;
-    }
+
 
     .enter-info {
 
@@ -480,7 +479,7 @@ html, body{
                 position: absolute;
                 display: inline-block;
                 width: 50%;
-                right: 15%;
+                right: 20%;
             }
         }
     }
@@ -504,7 +503,6 @@ html, body{
 
     .amount-info {
         margin-top: 30px;
-        margin-bottom: 45px;
         p{
             display:inline-block;
             margin-left: 0;
@@ -536,93 +534,6 @@ html, body{
         bottom: 0;
     }
 }
-
-#order-page {
-    font-family: "HelveticaNeue-Light", Arial;
-    header {
-        width:100%;
-        height:50px;
-        border-bottom:1px solid #bdbdbd;
-        div{
-            display:inline-block;
-            width: 100%;
-            line-height: 50px;
-            text-align: center;
-        }
-    }
-    section {
-        margin-left: 3%;
-        margin-right: 3%;
-        font-size: 15px;
-        .del-time {
-            font-size: 15px;
-        }
-        div {
-            p {
-                font-size: 15px;
-            }
-            p:first-child {
-                background-color: #A4A4A4;
-                color: white;
-            }
-        }
-        div.order 
-        {
-            .res-name {
-                font-weight: bold;
-            }
-            ul{
-                font-size: 15px;
-                list-style: none;
-                li {
-                    display: inline-block;
-                    &:first-child {
-                        width: 50%;
-                    }
-                    &:nth-child(2) {
-                        width: 10%;
-                    }
-                    &:last-child {
-                        width: 30%;
-                        text-align: right;
-                    }
-                }
-            }
-        }
-        ul.amount {
-            border-top: 1px solid #bdbdbd;
-            list-style: none;
-            li {
-                margin-left: 30%;
-            }
-            p {
-                font-size: 15px;
-                margin: 0;
-                display: inline-block;
-                color: #34495e;
-            }
-            p.label {
-                width: 30%;
-                text-align: left;
-            }
-            p.price {
-                width: 30%;
-                text-align: right;
-            }
-        }
-    }
-    footer {
-        width: 100%;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        button a {
-            font-weight: normal;
-            color: white;
-        }
-    }
-}
-
 #cart-page{
     font-family: "HelveticaNeue-Light", Arial;
     top:0px;
@@ -747,7 +658,6 @@ html, body{
     }
     
 }
-
 #side-menu{
     background-color:#6e6e6e;
     height:100%;
@@ -774,7 +684,6 @@ html, body{
         font-family: 'HelveticaNeue-Light', Helvetica, Arial, Sans-Serif;
     }
 }
-
 #account-page{
     height:100%;
     font-family: "HelveticaNeue-Light", Arial;
@@ -864,7 +773,6 @@ html, body{
     }
 
 }
-
 #order-history{
     height:100%;
     font-family: "HelveticaNeue-Light", Arial;
@@ -914,7 +822,6 @@ html, body{
     }
     }
 }
-
 #login-page{
     height:100%;
     font-family: "HelveticaNeue-Light", Arial;

@@ -6,29 +6,13 @@ var Food = DS.Model.extend({
 	quantity: DS.attr('number', {
 		defaultValue: 0
 	}),
-	restaurant: DS.belongsTo('restaurant'),
-	totalPrice: function() {
-		var price = this.get('price').substring(1),
-			quantity = this.get('quantity');
-		return "$" + (parseFloat(price) * quantity).toFixed(2);
-	}.property('price', 'quantity')
+	restaurant: DS.belongsTo('restaurant')
 });
 
 Food.reopenClass({
 	FIXTURES: [
 		{
-			id: '0',
-			name: 'Pudding',
-			price: '$1.00',
-			quantity: 2
-			// restaurants: 'boiling point'
-		},
-		{
-			id: '1',
-			name: 'Pudding',
-			price: '$1.00',
-			quantity: 2
-			// restaurants: 'boiling point'
+			id: 0
 		}
 	]
 });
