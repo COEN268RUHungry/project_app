@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 var CartController = Ember.ObjectController.extend({
-	needs: ['login'],
-	isLogged: Ember.computed.alias('controllers.login.isLogged'),
 	foodQuantity: 0,
 	actions: {
 		decrease: function(item) {
@@ -18,12 +16,7 @@ var CartController = Ember.ObjectController.extend({
 			this.set('foodQuantity', this.get('foodQuantity') + 1);
 		},
 		checkout: function() {
-			if (this.get('isLogged')) {
 				this.transitionToRoute('payment');
-			}
-			else {
-				this.transitionToRoute('login');
-			}
 		}
 	}
 });

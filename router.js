@@ -12,13 +12,12 @@ Router.map(function() {
 		this.route('fullmenu');
 	});
     this.resource('cart');
-//    this.resource('fullmenu');
     this.resource('payment');
 	this.resource('sidemenu');
     this.resource('account');
     this.resource('orderhistory');
-    this.resource('login');
-    this.resource('createuser');
+    this.route('login');
+    this.route('order', {path: '/order/:order_id'});
     
 });
 
