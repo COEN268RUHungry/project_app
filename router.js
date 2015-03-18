@@ -18,6 +18,7 @@ Router.map(function() {
     this.resource('account');
     this.resource('orderhistory');
     this.resource('login');
+    this.resource('createuser');
     
 });
 
