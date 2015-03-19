@@ -5,11 +5,21 @@ var RestaurantController = Ember.ObjectController.extend({
 	isLogged: Ember.computed.alias('controllers.login.isLogged'),
 	userID: Ember.computed.alias('controllers.login.userID'),
 	inputComment: '',
+	foodDots: [],
 	actions: {
-		changeImage: function() {
-			var len = this.get('foodGallery').length;
-			var i = this.get('currentImageIndex');
+		increaseImage: function() {
+			var len = this.get('foodGallery').length,
+				i = this.get('currentImageIndex');
 			i++;
+			this.set('currentImageIndex', i % len);
+		},
+		decreaseImage: function() {
+			var len = this.get('foodGallery').length,
+				i = this.get('currentImageIndex');
+			i--;
+			if (i < 0) {
+				i = i + len;
+			}
 			this.set('currentImageIndex', i % len);
 		},
 		showAddComment: function() {
@@ -38,7 +48,20 @@ var RestaurantController = Ember.ObjectController.extend({
 				this.set('inputComment', '');
 			}
 		}
-	}
+	},
+	dotsChange: function() {
+		var len = this.get('foodGallery').length,
+			currentImageIndex = this.get('currentImageIndex'),
+			dots = [];
+		for (var i=0; i<len; i++) {
+			var dot = {};
+			if (i === currentImageIndex) {
+				dot.isCurrent = true;
+			}
+			dots.push(dot);
+		}
+		this.set('foodDots', dots);
+	}.observes('currentImageIndex')
 });
 
 export default RestaurantController;

@@ -203,9 +203,44 @@ html, body{
     .restaurant-intro {
         border-bottom: 1px solid rgb(200,200,200);
         margin-top: 40px;
-        img {
-            width: 100%;
+        .food-gallery {
+            height: 240px;
+            span.arrow {
+                font-weight: bold;
+                font-size: 24px;
+                color: #1abc9c;
+                position: absolute;
+                top: 120px;
+                z-index: 1;
+                &:first-child {
+                    left: 5%;
+                }
+                &:last-child {
+                    right: 5%;
+                }
+            }
+            .indicator-dots {
+                z-index: 2;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                top: 250px;
+                span {
+                    color: #1abc9c;
+                    opacity: 0.4;
+                    &.is-current {
+                     opacity: 0.99;
+                    }
+                }
+            }
+            img {
+                height: 240px;
+                position: absolute;
+                left: 50%;
+                margin-left: -215px;
+            }
         }
+
         div {
             p {
                 text-align: center;

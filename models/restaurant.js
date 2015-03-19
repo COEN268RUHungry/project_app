@@ -13,9 +13,9 @@ var Restaurant = DS.Model.extend({
 	type: DS.attr('string'),
 	foodGallery: DS.attr(),
 	foodMenu: DS.attr(),
-	currentImageIndex: DS.attr('number', {
-		defaultValue: 0
-	}),
+	// currentImageIndex: DS.attr('number', {
+	// 	defaultValue: 0
+	// }),
 	comments: DS.hasMany('comment'),
 	
 	restaurantImage: function() {

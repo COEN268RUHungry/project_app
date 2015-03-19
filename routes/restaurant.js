@@ -9,7 +9,8 @@ var RestaurantRoute = Ember.Route.extend({
 	setupController: function(controller, model) {
     	controller.set('content', model)
               	  .set('isNotFullmenu', true)
-				  .set('isAddingComment', false);        
+				  .set('isAddingComment', false)
+				  .set('currentImageIndex', 0);        
   	}
 });
 
