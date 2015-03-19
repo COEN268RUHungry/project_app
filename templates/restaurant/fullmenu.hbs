@@ -10,8 +10,8 @@
     </header>
     <div class="menu-category scroll-part-x">
         <ul>
-			{{#each property in foodCategory}}
-				<li {{action 'selectCategory' property}}>{{property}}</li>
+			{{#each item in foodCategory}}
+				<li {{bind-attr class="item.isCurrent"}} {{action 'selectCategory' item}}>{{item.property}}</li>
 			{{/each}}
         </ul>
     </div>

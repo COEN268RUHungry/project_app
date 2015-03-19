@@ -62,16 +62,7 @@ var RestaurantController = Ember.ObjectController.extend({
 			dots.push(dot);
 		}
 		this.set('foodDots', dots);
-	}.observes('currentImageIndex'),
-	init: function() {
-		this._super();
-		// Ember.$('.food-gallery').on('swipeleft', function() {
-		// 	console.log(1);
-		// });
-		// Ember.$('.food-gallery').on('swipeleft', function() {
-		// 	console.log(1);
-		// });
-	}
+	}.observes('currentImageIndex')
 });
 
 export default RestaurantController;

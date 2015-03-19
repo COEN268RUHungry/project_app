@@ -6,12 +6,11 @@ var GalleryView = Ember.View.extend({
     	swipe_velocity: 0.5
   	},
   	gestures: {
-    	swipeLeft: function (event) {
+    	swipeLeft: function () {
       		this.get('controller').send('increaseImage');
       		return false;
     	},
-        swipeRight: function (event) {
-      		console.log(2);
+        swipeRight: function () {
       		this.get('controller').send('decreaseImage');
       		return false;
  	 	}

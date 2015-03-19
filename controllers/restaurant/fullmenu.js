@@ -3,15 +3,15 @@ import Ember from 'ember';
 var RestaurantFullmenuController = Ember.ObjectController.extend({
 		needs: ["cart"],
 		foodQuantity: Ember.computed.alias("controllers.cart.foodQuantity"),
-  		
+  		currentProperty: '',
 
 	actions: {
 		back: function() {
 			this.set('isNotFullmenu', true);
 			this.transitionToRoute('restaurant');
 		},
-		selectCategory: function(property) {
-			this.set('currentCategory', this.get('content').get('formattedFoodMenu')[property]);
+		selectCategory: function(item) {
+			this.set('currentCategory', this.get('content').get('formattedFoodMenu')[item.property]);
 		},
 		add: function(item) {	
 			var number = this.get('foodQuantity') + 1;
@@ -30,6 +30,19 @@ var RestaurantFullmenuController = Ember.ObjectController.extend({
 			});
 		}
 	},
+	currentCategoryChange: function() {
+		var foodCategory = this.get('foodCategory'),
+			currentProperty = this.get('currentProperty');
+		for (var i=0; i<foodCategory.length; i++) {
+			if (foodCategory[i].property === currentProperty) {
+				foodCategory[i].set('isCurrent', true);
+			}
+			else {
+				foodCategory[i].set('isCurrent', false);
+
+			}
+		}
+	}
 });
 
 export default RestaurantFullmenuController;

@@ -15,9 +15,6 @@ var Restaurant = DS.Model.extend({
 	foodMenu: DS.attr(),
 	lat: DS.attr(),
 	lng: DS.attr(),
-	// currentImageIndex: DS.attr('number', {
-	// 	defaultValue: 0
-	// }),
 	comments: DS.hasMany('comment'),
 	
 	restaurantImage: function() {
@@ -30,13 +27,28 @@ var Restaurant = DS.Model.extend({
 	}.property('id', 'foodGallery', 'currentImageIndex'),
 	
 	foodCategory: function() {
-		return Ember.keys(this.get('foodMenu'));
+		var keys = Ember.keys(this.get('foodMenu')),
+			category = [];
+		for (var i=0; i<keys.length; i++) {
+			var item = {};
+			item.property = keys[i];
+			if (i===0) {
+				item.isCurrent = true;
+			}
+			else {
+				item.isCurrent = false;
+			}
+			category.push(item);
+		}
+		return category;
+
+		// return Ember.keys(this.get('foodMenu'));
 	}.property('foodMenu'),
 	
 	formattedFoodMenu: function() {
 		var menu = {};
 		for (var i=0; i < this.get('foodCategory').length; i++) {
-			var category = this.get('foodCategory')[i];
+			var category = this.get('foodCategory')[i].property;
 			menu[category] = [];
 			for (var j=0; j < this.get('foodMenu')[category].length; j++) {
 				var temp = this.get('foodMenu')[category][j];
