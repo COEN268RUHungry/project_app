@@ -9,6 +9,9 @@ html,
 body {
   height: 100%;
 }
+body {
+  overflow-x: hidden;
+}
 .ember-view {
   height: 100%;
 }
@@ -228,9 +231,8 @@ body {
 }
 #restaurant-page .restaurant-intro .food-gallery img {
   height: 240px;
+  width: 100%;
   position: absolute;
-  left: 50%;
-  margin-left: -215px;
 }
 #restaurant-page .restaurant-intro div p {
   text-align: center;

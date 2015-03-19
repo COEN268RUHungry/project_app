@@ -25,6 +25,7 @@ var RestaurantController = Ember.ObjectController.extend({
 		showAddComment: function() {
 			this.set('isAddingComment', !this.get('isAddingComment'));
 		},
+
 		addComment: function(param) {
 			var isLogged = this.get('isLogged');
 			if (this.get('inputComment') !== '')
@@ -61,7 +62,16 @@ var RestaurantController = Ember.ObjectController.extend({
 			dots.push(dot);
 		}
 		this.set('foodDots', dots);
-	}.observes('currentImageIndex')
+	}.observes('currentImageIndex'),
+	init: function() {
+		this._super();
+		// Ember.$('.food-gallery').on('swipeleft', function() {
+		// 	console.log(1);
+		// });
+		// Ember.$('.food-gallery').on('swipeleft', function() {
+		// 	console.log(1);
+		// });
+	}
 });
 
 export default RestaurantController;

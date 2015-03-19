@@ -9,6 +9,11 @@ var App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver: Resolver
+  // customEvents: {
+  //   // add support for the loadedmetadata media
+  //   // player event
+  //   'swipeLeft': "swipeLeft"
+  // }
 });
 
 loadInitializers(App, config.modulePrefix);

@@ -15,16 +15,8 @@
         </nav>
     </header>
     <section class="restaurant-intro">
-        <div class="food-gallery">
-            <span class="glyphicon glyphicon-menu-left arrow" {{action 'decreaseImage'}}></span>
-            <img {{bind-attr src=foodImage}} {{action 'increaseImage'}} />
-            <div class="indicator-dots">
-                {{#each dot in foodDots}}
-                    <span {{bind-attr class="dot.isCurrent"}}>•</span>
-                {{/each}}
-            </div> 
-            <span class="glyphicon glyphicon-menu-right arrow" {{action 'increaseImage'}}></span>
-        </div>
+        {{view "gallery"}}
+
         <div>
             <p class="restaurant-name">{{name}}</p>
             <p>{{type}}</p>
