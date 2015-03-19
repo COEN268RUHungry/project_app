@@ -14,25 +14,25 @@
 
 </li>
 <li>
-<p>03/02/2015</p>
+<p>3/2/2015</p>
 <p>$20.80</p>
 <p>Delivered</p>
 </li>
 <li>
 
-<p>03/05/2015</p>
+<p>3/5/2015</p>
 <p>$23.80</p>
 <p>Delivered</p>
 </li>
 <li>
 
-<p>03/09/2015</p>
+<p>3/9/2015</p>
 <p>$19.80</p>
 <p>Delivered</p>
 </li>
 {{#each foo in model}}
 <li>
-<p>{{foo.date}}</p>
+<p>{{time-format foo.date 'l'}}</p>
 <p>{{foo.totalAmount}}</p>
 <p>{{foo.status}}</p>
 </li>
