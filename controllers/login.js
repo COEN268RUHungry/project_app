@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 var LoginController = Ember.ObjectController.extend({
-	
+	name:'',
+    address:'',
 	actions:{
 
         save: function (){
@@ -17,10 +18,14 @@ var LoginController = Ember.ObjectController.extend({
                     if (email === user.get('email')) {
                         validPassword = user.get('password');
                         if (password === validPassword) {
+                            self.set('name',user.get('name'));
+                            self.set('address',user.get('address'));
+                            self.set('email',user.get('email'));
                             alert('Welcome Back!');           
                             self.set('isLogged', true);
                             self.set('userID', user.get('id'));
                             self.transitionToRoute('sidemenu');
+
                         }else{
                             alert('Wrong password!');
                         }
@@ -34,7 +39,12 @@ var LoginController = Ember.ObjectController.extend({
 
         newUser:function(){
             this.transitionToRoute('createuser');
-        }
+        },
+        logout:function(){
+        this.set('isLogged', false);
+        alert('Thank you, Bye~');
+        this.transitionToRoute('sidemenu');
+      }
     },
 	
 });

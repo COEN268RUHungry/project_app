@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 var AccountRoute = Ember.Route.extend({
+  controllerName: 'login',
 	model: function() {
-		return this.store.find('user', 1);
+		return this.store.find('user');
 	},
 	setupController: function(controller, model) {
       controller.set('content', model);
@@ -16,7 +17,8 @@ var AccountRoute = Ember.Route.extend({
   		},
   		toggleContactDiv:function(){
   			Ember.$("#contact-div").toggleClass("hide");
-  		}
+  		},
+      
   	}
 });
 
