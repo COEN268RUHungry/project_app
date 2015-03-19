@@ -57,7 +57,7 @@ var Restaurant = DS.Model.extend({
 				item.foodName = temp.foodName;
 				item.foodPrice = '$' + temp.price.toFixed(2);
 				item.icon = '/images/%@/menu/%@.jpg'.fmt(this.get('id'), temp.foodID);
-				menu[category].push(Ember.Object.create(item));
+				menu[category].push(item);
 			}
 		}
 		return menu;

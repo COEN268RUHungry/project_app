@@ -12,7 +12,7 @@ var Order = DS.Model.extend({
 	tax: DS.attr('string'),
 	totalAmount: DS.attr('string'),
 	date: DS.attr('date'),
-	restaurants: DS.attr(),
+	// restaurants: DS.attr(),
 	status: DS.attr('string', {
 		defaultValue: 'In Processing'
 	}),

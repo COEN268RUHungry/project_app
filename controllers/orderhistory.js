@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var OrderhistoryController = Ember.ObjectController.extend({
+var OrderhistoryController = Ember.ArrayController.extend({
 	
 	
 	
