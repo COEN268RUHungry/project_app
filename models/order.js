@@ -22,7 +22,7 @@ var Order = DS.Model.extend({
 Order.reopenClass({
 	FIXTURES: [
 		{
-			id: '0',
+			id: '10004',
 			deliveryTime: '1:30 PM -- 2:00 PM',
 			street: '500 El Camino Real',
 			city: 'Santa Clara, CA',
@@ -30,7 +30,8 @@ Order.reopenClass({
 			phoneNumber: '(650)611-0001',
 			amount: '$30.05',
 			tax: '$2.95',
-			totalAmount: '$33.00'
+			totalAmount: '$33.00',
+			date:'03/17/2015'
 		}
 	]
 });

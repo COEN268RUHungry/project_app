@@ -13,6 +13,8 @@ var Restaurant = DS.Model.extend({
 	type: DS.attr('string'),
 	foodGallery: DS.attr(),
 	foodMenu: DS.attr(),
+	lat: DS.attr(),
+	lng: DS.attr(),
 	// currentImageIndex: DS.attr('number', {
 	// 	defaultValue: 0
 	// }),
@@ -64,6 +66,8 @@ Restaurant.reopenClass({
 			address: '46807 Warm Springs Blvd, Fremont, CA 94538',
 			type: 'Taiwanese, Hotpot, Milktea',
 			foodGallery: ['milktea', 'macaron', 'hotpot', 'snowcube'],
+			lat: 37.488955,
+			lng: -121.9284261,
 			foodMenu: {
 				hotpot: [
 				{
@@ -132,6 +136,8 @@ Restaurant.reopenClass({
 			address: '19959 Stevens Creek Blvd, Cupertino, CA 95014',
 			type: 'Tea, Milktea',
 			foodGallery: ['fruittea', 'milktea', 'menu'],
+			lat: 37.323239,
+			lng: -122.022867,
 			foodMenu: {
 				milktea: [
 				{
@@ -184,6 +190,8 @@ Restaurant.reopenClass({
 			address: '35233 Newark Blvd, Ste A, Newark, CA 94560',
 			type: 'Japanese, Sushi',
 			foodGallery: ['sushi', 'belt', 'teabag'],
+			lat: 37.547336,
+			lng: -122.045729,
 			foodMenu: {
 				sushi: [
 				{
@@ -236,6 +244,8 @@ Restaurant.reopenClass({
 			address: '43749 Boscell Rd, Fremont, CA 94538',
 			type: 'Chinese',
 			foodGallery: ['lotus', 'seafood', 'fish'],
+			lat: 37.4982938,
+			lng: -121.9741617,
 			foodMenu: {
 				appetizer: [
 				{

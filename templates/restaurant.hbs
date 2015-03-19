@@ -29,7 +29,11 @@
         <p>Phone: {{phone}}</p>
 		<p>Website: <a {{bind-attr href=website}}>{{website}}</a></p>
         <p class="location">Location: {{address}}</p>
-        <img src="/images/map.jpg" />
+        {{google-map lat=lat
+             lng=lng
+             zoom=17
+             gopt_zoomControl=false
+             type='map'}}
     </section>
     <section class="comments">
         <span class="glyphicon glyphicon-plus" {{action 'showAddComment'}}></span>

@@ -8,25 +8,35 @@
 <div class="detail">
 <ul>
 <li class="title">
-<p>Order No.</p>
 <p>Date</p>
+<p>TotalAmount</p>
 <p>Status</p>
+
 </li>
 <li>
-<p>10001</p>
 <p>03/02/2015</p>
+<p>$20.80</p>
 <p>Delivered</p>
 </li>
 <li>
-<p>10002</p>
+
 <p>03/05/2015</p>
+<p>$23.80</p>
 <p>Delivered</p>
 </li>
 <li>
-<p>10003</p>
+
 <p>03/09/2015</p>
+<p>$19.80</p>
 <p>Delivered</p>
 </li>
+{{#each foo in model}}
+<li>
+<p>{{foo.date}}</p>
+<p>{{foo.totalAmount}}</p>
+<p>{{foo.status}}</p>
+</li>
+{{/each}}
 </ul>
 </div>
 </div>
